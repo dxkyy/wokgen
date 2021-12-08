@@ -1,6 +1,6 @@
 # WOKGen
 
-WOKGen is a [WOKCommands](https://docs.wornoffkeys.com/) project generator cli, that comes with a basic "Test" command and a welcom message feature.
+WOKGen is a [WOKCommands](https://docs.wornoffkeys.com/) project generator cli, that comes with a basic "Test" command and a welcome message feature.
 
 ![](https://dxkyy.kill-all.men/5hN7hx3ra.png)
 
