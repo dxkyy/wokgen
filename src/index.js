@@ -163,7 +163,6 @@ function createDirectoryContents(templatePath, newProjectPath) {
 (function main() {
   prompts(FIRST).then((response) => {
     const choice = response["option"];
-
     if (choice == "new") {
       prompts(QUESTIONS).then((responses) => {
         const projectName = responses["bot-name"];
@@ -195,11 +194,13 @@ function createDirectoryContents(templatePath, newProjectPath) {
           wokgenJSON,
           "utf-8"
         );
+
         fs.writeFileSync(
           `${CURR_DIR}/${projectName}/package.json`,
           packageJSON,
           "utf-8"
         );
+
         initNPM(`${CURR_DIR}/${projectName}`);
         console.info(clc.green("Done."));
         console.info(
