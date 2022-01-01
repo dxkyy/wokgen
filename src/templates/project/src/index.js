@@ -11,6 +11,8 @@ client.on("ready", () => {
   new WOKCommands(client, {
     commandsDir: path.join(__dirname, "commands"),
     featuresDir: path.join(__dirname, "features"),
+    testServers: [""],
+    botOwners: [""],
     disabledDefaultCommands: [
       "language",
       "requiredrole",
