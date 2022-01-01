@@ -230,28 +230,61 @@ function createDirectoryContents(templatePath, newProjectPath) {
                 const cmdCategory = response["cmd-category"];
                 const cmdDescription = response["cmd-desc"];
                 const cmdSlash = response["cmd-slash"];
-
-                if (fs.existsSync(`src/commands/${cmdName}.js`)) {
-                  return console.log("That command already exists.");
+                const categoryPath = `${CURR_DIR}/src/commands/${cmdCategory.replace(
+                  " ",
+                  "-"
+                )}`;
+                if (cmdCategory === "") {
+                  if (fs.existsSync(`src/commands/${cmdName}.js`)) {
+                    return console.log("That command already exists.");
+                  } else {
+                    if (cmdSlash === "slash-yes") {
+                      fs.writeFileSync(
+                        `${CURR_DIR}/src/commands/${cmdName}.js`,
+                        yesSlashCommand(cmdName, cmdCategory, cmdDescription),
+                        "utf-8"
+                      );
+                    } else if (cmdSlash === "slash-no") {
+                      fs.writeFileSync(
+                        `${CURR_DIR}/src/commands/${cmdName}.js`,
+                        noSlashCommand(cmdName, cmdCategory, cmdDescription),
+                        "utf-8"
+                      );
+                    } else if (cmdSlash === "slash-both") {
+                      fs.writeFileSync(
+                        `${CURR_DIR}/src/commands/${cmdName}.js`,
+                        bothSlashCommand(cmdName, cmdCategory, cmdDescription),
+                        "utf-8"
+                      );
+                    }
+                  }
                 } else {
-                  if (cmdSlash === "slash-yes") {
-                    fs.writeFileSync(
-                      `${CURR_DIR}/src/commands/${cmdName}.js`,
-                      yesSlashCommand(cmdName, cmdCategory, cmdDescription),
-                      "utf-8"
-                    );
-                  } else if (cmdSlash === "slash-no") {
-                    fs.writeFileSync(
-                      `${CURR_DIR}/src/commands/${cmdName}.js`,
-                      noSlashCommand(cmdName, cmdCategory, cmdDescription),
-                      "utf-8"
-                    );
-                  } else if (cmdSlash === "slash-both") {
-                    fs.writeFileSync(
-                      `${CURR_DIR}/src/commands/${cmdName}.js`,
-                      bothSlashCommand(cmdName, cmdCategory, cmdDescription),
-                      "utf-8"
-                    );
+                  //CATEGORY EXISTS
+                  if (!fs.existsSync(categoryPath)) {
+                    fs.mkdirSync(categoryPath);
+                  }
+                  if (fs.existsSync(`${categoryPath}/${cmdName}.js`)) {
+                    return console.log("That command already exists.");
+                  } else {
+                    if (cmdSlash === "slash-yes") {
+                      fs.writeFileSync(
+                        `${categoryPath}/${cmdName}.js`,
+                        yesSlashCommand(cmdName, cmdCategory, cmdDescription),
+                        "utf-8"
+                      );
+                    } else if (cmdSlash === "slash-no") {
+                      fs.writeFileSync(
+                        `${categoryPath}/${cmdName}.js`,
+                        noSlashCommand(cmdName, cmdCategory, cmdDescription),
+                        "utf-8"
+                      );
+                    } else if (cmdSlash === "slash-both") {
+                      fs.writeFileSync(
+                        `${categoryPath}/${cmdName}.js`,
+                        bothSlashCommand(cmdName, cmdCategory, cmdDescription),
+                        "utf-8"
+                      );
+                    }
                   }
                 }
               } else {
