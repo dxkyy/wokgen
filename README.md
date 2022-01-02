@@ -1,6 +1,6 @@
 # WOKGen
 
-WOKGen is a [WOKCommands](https://docs.wornoffkeys.com/) project generator cli, that comes with a basic "Test" command and a welcome message feature.
+WOKGen is a [WOKCommands](https://docs.wornoffkeys.com/) project generator cli, that will you can use to speed up the process of coding discord bots with WOKCommands.
 
 ![](https://dxkyy.kill-all.men/5hN7hx3ra.png)
 
