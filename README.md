@@ -1,6 +1,8 @@
 # WOKGen
 
 WOKGen is a [WOKCommands](https://docs.wornoffkeys.com/) project generator cli, that will you can use to speed up the process of coding discord bots.
+[![downloadsBadge](https://img.shields.io/npm/dt/discord-logs?style=for-the-badge)](https://npmjs.com/wokgen)
+
 
 ![](https://dxkyy.kill-all.men/5hN7hx3ra.png)
 
