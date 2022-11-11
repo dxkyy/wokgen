@@ -13,6 +13,7 @@
     "command",
     "handler"
   ],
+  "type": "module",
   "author": "dxkyy",
   "license": "MIT",
   "dependencies": {
