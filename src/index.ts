@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { init } from "./commands/init";
 import { gen } from "./commands/gen";
 import { Command } from "commander";

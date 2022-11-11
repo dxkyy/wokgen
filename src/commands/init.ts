@@ -4,7 +4,6 @@ import fs from "fs";
 import path from "path";
 import {
   name,
-  lang,
   mainDir,
   commandsDir,
   eventsDir,
@@ -18,7 +17,6 @@ import { createDirectoryContents, delay, initNPM } from "../util/functions";
 export async function init() {
   let data = await prompts([
     name,
-    lang,
     mainDir,
     commandsDir,
     eventsDir,
@@ -31,7 +29,6 @@ export async function init() {
     path.join(__dirname, "..", "templates", "package.json")
   );
   const botName = data["bot-name"];
-  const projectLang = data["lang"];
   const mainDirectory = data["dir-main"];
   const cmdDirecotry = data["dir-cmd"];
   const eventDirectory = data["dir-event"];
@@ -64,9 +61,7 @@ export async function init() {
     "features"
   );
 
-  const language = data.lang;
   const config = {
-    language: projectLang,
     bot: {
       token: data["bot-token"],
       prefix: data["bot-prefix"],

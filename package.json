@@ -23,6 +23,14 @@
     "prompts": "^2.4.2"
   },
   "repository": {
+    "type": "git",
     "url": "https://github.com/dxkyy/wokgen"
+  },
+  "bugs": {
+    "url": "https://github.com/dxkyy/wokgen/issues"
+  },
+  "homepage": "https://github.com/dxkyy/wokgen#readme",
+  "bin": {
+    "wokgen": "./src/index.ts"
   }
 }
