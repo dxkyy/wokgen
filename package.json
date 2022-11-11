@@ -1,39 +1,28 @@
 {
   "name": "wokgen",
-  "version": "1.0.2",
-  "description": "A CLI that lets you generate a WOKCommands project in no time!",
-  "main": "src/index.js",
-  "dependencies": {
-    "chalk": "^5.0.0",
-    "cli-color": "^2.0.1",
-    "cli-cursor": "^3.1.0",
-    "cli-spinners": "^2.6.1",
-    "cli-width": "^3.0.0",
-    "inquirer": "^8.2.0",
-    "prompts": "^2.4.2"
-  },
+  "version": "2.0.0",
+  "description": "CLI that lets you generate a WOKCommands project.",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dxkyy/wokgen.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "discord",
-    "cli",
-    "project",
-    "generator",
-    "wokcommands"
+    "discord.js",
+    "wokcommands",
+    "command",
+    "handler"
   ],
   "author": "dxkyy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dxkyy/wokgen/issues"
+  "license": "MIT",
+  "dependencies": {
+    "@types/cli-color": "^2.0.2",
+    "@types/prompts": "^2.4.1",
+    "cli-color": "^2.0.3",
+    "commander": "^9.4.1",
+    "prompts": "^2.4.2"
   },
-  "homepage": "https://github.com/dxkyy/wokgen#readme",
-  "bin": {
-    "wokgen": "./src/index.js"
+  "repository": {
+    "url": "https://github.com/dxkyy/wokgen"
   }
 }
