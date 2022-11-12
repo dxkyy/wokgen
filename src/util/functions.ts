@@ -39,12 +39,11 @@ export function initNPM(filePath: string) {
 }
 function installDependencies(filePath: string) {
   installDiscordJS(filePath);
-  installWOK(filePath);
   installNodemon(filePath);
 }
 
 function installDiscordJS(filePath: string) {
-  return execSync(`npm install discord.js@latest`, {
+  return execSync(`npm install discord.js wokcommands`, {
     cwd: filePath,
     stdio: "ignore",
   });
@@ -52,13 +51,6 @@ function installDiscordJS(filePath: string) {
 
 function installNodemon(filePath: string) {
   return execSync(`npm install -D nodemon`, {
-    cwd: filePath,
-    stdio: "ignore",
-  });
-}
-
-function installWOK(filePath: string) {
-  return execSync(`npm install wokcommands`, {
     cwd: filePath,
     stdio: "ignore",
   });

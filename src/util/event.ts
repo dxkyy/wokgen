@@ -16,12 +16,7 @@ export async function eventFunction() {
   const eventPath = `${CURR_DIR}/${evntPath}/${discordEvent.replace(" ", "-")}`;
   try {
     if (fs.existsSync(wokgenPath) && fs.existsSync(eventPath)) {
-      if (
-        !fs.existsSync(
-          path.join(__dirname, "..", "templates", "events", discordEvent) +
-            ".ts"
-        )
-      ) {
+      if (!fs.existsSync(path.join(eventPath, evntFile + ".ts"))) {
         createEventFile(
           path.join(__dirname, "..", "templates", "events", discordEvent) +
             ".ts",
@@ -32,12 +27,7 @@ export async function eventFunction() {
       }
     } else if (!fs.existsSync(eventPath)) {
       fs.mkdirSync(eventPath);
-      if (
-        !fs.existsSync(
-          path.join(__dirname, "..", "templates", "events", discordEvent) +
-            ".ts"
-        )
-      ) {
+      if (!fs.existsSync(path.join(eventPath, evntFile + ".ts"))) {
         createEventFile(
           path.join(__dirname, "..", "templates", "events", discordEvent) +
             ".ts",
