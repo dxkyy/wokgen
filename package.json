@@ -1,6 +1,6 @@
 {
   "name": "wokgen",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "CLI that lets you generate a WOKCommands project.",
   "main": "index.js",
   "scripts": {
